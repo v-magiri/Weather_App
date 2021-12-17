@@ -12,10 +12,11 @@ body{
     flex-direction: column;
     justify-content: center;
     margin:2% auto;
-    width:30%;
-    border-radius: 20px;
-    background-color: #f1f1f1;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    width:30%;   
+}
+form{
+    /* margin: 2% 0; */
+    background-color: #a8edea;
 }
 .city_Input{
     width:100%;
@@ -30,22 +31,44 @@ body{
 }
 .weather{
     font-size: 1.25rem;
-    margin:0 4px;
+    margin:8% 0;
+    padding:10px 5px;
 }
 .weather label{
     padding: 5px;
 }
 .temp_details{
     margin:4px 0;
-    font-size:1.5rem;
+    font-size:2.5rem;
+    padding-top:1.25rem;
 }
 .hewa_details{
     text-align: center;
 }
 .city_name{
-    margin:3px 0;
-    font-size: 1.25rem;
+    margin:3px 0;   
+    padding:1.5rem 0;
+    font-size: 1.5rem;
 }
 .weather_conditions{
     margin:3px 0;
+    padding:0 1.25rem;
+    font-size: 1.25rem;
+}
+.city_card{
+    display:none;
+    border-radius: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.6);
+    overflow: hidden;
+    
+}
+.weather_icon{
+    text-align:center;
+    margin:0 auto;
+    position:relative;
+    top:-50px;
+    background: #f1f1f1;
+    border-radius: 50%;
+    width:100px;
+    margin-bottom:-50px;
 }
