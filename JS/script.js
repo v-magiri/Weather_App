@@ -22,12 +22,7 @@ const updateUI= (data)=>{
     temp.innerText=cityTemperature;
 
     //update the UI of the time of the day
-    let timeSrc=null;
-    if(weather.isDayTime){
-        timeSrc="img/day.svg";
-    }else{
-        timeSrc="img/night.svg";
-    }
+    let timeSrc= weather.isDayTime ? "img/day.svg" :"img/night.svg";
     time.setAttribute("src",timeSrc);
 
     //adding the iconsrc
