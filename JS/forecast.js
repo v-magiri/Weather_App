@@ -1,5 +1,5 @@
 //Todo use for forecast
-const key="	4NnxoTKabE7gE6UoVlYzsmR3pPpAbOS4";
+const key="VJcNusMGSpIY7GWdAvTtPNdXRbL6wn4b";
 //get weather conditions of the specified API
 const getWeather = async(location_key)=>{
     const base="http://dataservice.accuweather.com/currentconditions/v1/";

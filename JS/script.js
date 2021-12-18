@@ -22,7 +22,7 @@ const updateUI= (data)=>{
     temp.innerText=cityTemperature;
 
     //update the UI of the time of the day
-    let timeSrc= weather.isDayTime ? "img/day.svg" :"img/night.svg";
+    let timeSrc= weather.IsDayTime ? "img/day.svg": "img/night.svg";
     time.setAttribute("src",timeSrc);
 
     //adding the iconsrc
@@ -42,6 +42,8 @@ cityForm.addEventListener("submit",e=>{
     e.preventDefault();
     const city= cityForm.city.value.trim();
     cityForm.reset();
+    //save to local Storage
+    localStorage.setItem("city",city);
     //update the UI
     updateCityDetails(city).then((data)=>{
         console.log(data);
@@ -50,3 +52,11 @@ cityForm.addEventListener("submit",e=>{
         console.log(err);
     });
 });
+if(localStorage.getItem("city")){
+    updateCityDetails(localStorage.getItem("city")).then((data)=>{
+        console.log(data);
+        updateUI(data);
+    }).catch(()=>{
+        console.log(err);
+    })
+}
