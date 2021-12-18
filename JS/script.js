@@ -10,6 +10,7 @@ const temp=document.querySelector(".temp");
 //UI of time day weather condition
 const time=document.querySelector(".time");
 const icon=document.querySelector(".weather_icon img");
+const forecast=new Forecast();
 
 const updateUI= (data)=>{
     const cityDetails=data.cityDetails;
@@ -33,11 +34,7 @@ const updateUI= (data)=>{
     // const weather=
 
 }
-const updateCityDetails = async(city)=>{
-    const cityDet=await getKey(city);
-    const cityWeather=await getWeather(cityDet.Key);
-    return {cityDetails:cityDet,cityWeatherConditions:cityWeather};
-}
+
 cityForm.addEventListener("submit",e=>{
     e.preventDefault();
     const city= cityForm.city.value.trim();
@@ -45,18 +42,18 @@ cityForm.addEventListener("submit",e=>{
     //save to local Storage
     localStorage.setItem("city",city);
     //update the UI
-    updateCityDetails(city).then((data)=>{
+    forecast.updateCity(city).then((data)=>{
         console.log(data);
         updateUI(data);
     }).catch((err)=>{
         console.log(err);
     });
 });
-if(localStorage.getItem("city")){
-    updateCityDetails(localStorage.getItem("city")).then((data)=>{
-        console.log(data);
-        updateUI(data);
-    }).catch(()=>{
-        console.log(err);
-    })
-}
+// if(localStorage.getItem("city")){
+//     forecast.updateCity(localStorage.getItem("city")).then((data)=>{
+//         console.log(data);
+//         updateUI(data);
+//     }).catch(()=>{
+//         console.log(err);
+//     })
+// }
